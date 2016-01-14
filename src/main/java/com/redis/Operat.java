@@ -24,7 +24,7 @@ public class Operat {
 		jedis.set("key-1", "value1");
 		// 获取存储的数据
 		// log.info("key1的数据为： "+jedis.get("key1"));
-		System.out.println("key1的数据为： " + jedis.get("key1"));
+		System.out.println("key-1的数据为： " + jedis.get("key-1"));
 		/*********   redis对列表的操作    *************/
 		//存储到列表中
 		jedis.lpush("key-y","redis11","redis21","redis31");
@@ -33,7 +33,7 @@ public class Operat {
 		for(String s:list){
 			System.out.println(s);
 			/****       删除对应数据   ******/
-			//jedis.lrem("list1", 3, s);
+			jedis.lrem("list1", 3, s);
 		}
 		/***   获取redis对应的key值列表      **/
 		
